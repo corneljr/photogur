@@ -3,21 +3,22 @@
 		<h1>Add a picture</h1>
 	</div>
 	<div class='panel-body'>
-		<%= form_tag '/pictures' do %>
+		<%= form_for @picture do |f| %>
+
 			<div class='form-group'>
-				<%= label_tag 'artist' %>
-				<%= text_field_tag 'artist', nil, class: 'form-control' %>
+				<%= f.label 'artist' %>
+				<%= f.text_field 'artist', class: 'form-control' %>
 			</div>
 			<div class='form-group'>
-				<%= label_tag 'title' %>
-				<%= text_field_tag 'title', nil, class: 'form-control' %>
+				<%= f.label 'title' %>
+				<%= f.text_field 'title', class: 'form-control' %>
 			</div>
 			<div class='form-group'>
-				<%= label_tag 'url' %>
-				<%= text_field_tag 'url', nil, class: 'form-control' %>
+				<%= f.label 'url' %>
+				<%= f.text_field 'url', class: 'form-control' %>
 			</div>
 			<div>
-				<%= submit_tag 'Save', class: 'btn btn-primary' %>
+				<%= f.submit 'Save', class: 'btn btn-primary' %>
 			</div>
 		<% end %>
 	</div>
