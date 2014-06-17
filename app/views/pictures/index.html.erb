@@ -1,5 +1,13 @@
-<div class='jumbotron center'>
-	<h1>Welcome to Photogur!</h1>
-	<h2>Share your pictures with the world!</h2>
-	<p class=><%= link_to "Log in!", '#', class: 'btn btn-primary' %></p>
+<div class='main'>
+	<% @pictures.each do |picture| %>
+		<div class='box panel panel-body'>
+			<a href="/pictures/<%= picture.id %>"/>
+				<%= image_tag(picture.url,class: 'images') %>
+			</a>
+			<div class='panel-footer center'>
+				<h3><%= picture[:title] %></h3>
+				<p>Posted by: <%= User.find(picture.user_id).email %></p>
+			</div>
+		</div>
+	<% end %>
 </div>

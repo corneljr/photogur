@@ -2,3 +2,45 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.images {
+	width: 100%;
+	height: auto;
+}
+
+.box {
+	width: 31%;
+	margin: 10px;
+	float: left;
+}
+
+.main {
+	display: inline-block;
+}
+
+.show {
+	text-align: center;
+	width: auto;
+	margin-left: 300px;
+	margin-right: 300px;
+	margin-bottom: 0px;
+}
+
+
+.submittal {
+	float: right;
+}
+
+.btn-show {
+	float:left;	
+	margin-left: 20px;
+}
+
+.main-btn {
+	margin-top: 30px;
+	margin-bottom: 10px;
+}
+
+.btn-delete {
+	float:right;
+	margin-right: 20px;
+}

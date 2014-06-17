@@ -1,11 +1,22 @@
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
-    <span class='glyphicon glyphicon-picture'></span>
+    <!-- <span class='glyphicon glyphicon-picture'></span> -->
     <div class="navbar-header">
-      <%= link_to "Photogur", '#', class: 'navbar-brand' %>
+      <% if user_signed_in? %>
+        <%= link_to "Photogur", pictures_url, class: 'navbar-brand' %>
+      <% else %>
+        <%= link_to "Photogur", root_url, class: 'navbar-brand' %>
+      <% end %>
     </div>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+      	<% if user_signed_in? %>
+      	<li><%= link_to "All Pictures", pictures_url %></li>
+      	<li><%= link_to "Upload Picture", new_picture_url %></li>
+        <li><%= link_to "Account Settings",edit_user_registration_url %></li>
+        <li><%= link_to "Sign out", destroy_user_session_url, method: :delete %></li>
+      	<% else %>
+        <li><%= link_to "Sign in", new_user_session_url %></li>
+        <% end %>
       </ul>
   </div>
 </nav>

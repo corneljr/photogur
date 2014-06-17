@@ -1,9 +1,13 @@
-<div class='panel panel-primary'>
-	<div class='panel panel-body'>
-		<%= image_tag(picture[:url], width:'200', height:'300') %>
-	</div>
-	<div class='panel panel-footer'>
-		<h2><%= picture[:title] %></h2>
-		<h3><%= picture[:title] %>,<%= picture[:artist] %></h3>
-	</div>
+<p class=><%= link_to "Back", '/pictures', class: 'btn btn-primary btn-show' %></p>
+
+<% if current_user.id == @picture.user_id %>
+<p class=><%= link_to "Delete", picture_path(@picture), method: :delete, class: 'btn btn-primary btn-delete' %></p>
+<% end %>
+
+<div class='panel panel-body show'>
+	<%= image_tag(@picture[:url], class: 'images') %>
+</div>
+
+<div class='panel panel-body show'>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio voluptas cupiditate quibusdam magnam doloribus, nobis et mollitia minus aliquam vero fugiat atque temporibus a sit sed minima veniam itaque enim.</p>
 </div>
