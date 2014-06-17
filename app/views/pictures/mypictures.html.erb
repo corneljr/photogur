@@ -7,8 +7,7 @@
 			</a>
 			</div>
 			<div class='mypictures-footer panel-footer center mypicture-footer'>
-				<p class=><%= link_to "Edit", edit_picture_path(picture.id), class: 'btn btn-primary btn-edit' %></p>
-				<p class=><%= link_to "Delete", picture_path(@pictures), method: :delete, class: 'btn btn-primary btn-delete' %></p>
+				<p class='mypic'><%= link_to "Edit", edit_picture_path(picture.id), class: 'btn btn-primary mypic-edit' %><%= link_to "Delete", picture_path(picture.id), method: :delete, class: 'btn btn-primary mypic-delete' %></p>
 			</div>
 		</div>
 	<% end %>

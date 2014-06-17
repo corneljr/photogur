@@ -82,6 +82,7 @@ h3 {
 .btn-delete {
 	float:right;
 	margin-right: 20px;
+	border: 0px;
 }
 
 .btn-edit {
@@ -102,4 +103,18 @@ h3 {
 	background-color: #bdc3c7;
 	height: 100px;
 	border: 0px;
+}
+
+.mypic-edit {
+	margin: 20px;
+	display: inline-block;
+}
+
+.mypic-delete {
+	margin: 20px;
+	display: inline-block;
+}
+
+.mypic {
+
 }
