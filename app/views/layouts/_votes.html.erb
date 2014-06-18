@@ -1,5 +1,27 @@
-<div>
-	<%= link_to("Upvote", upvote_picture_url , method: 'post') %>
-	<%= link_to("Downvote", downvote_picture_url , method: 'post') %>
-	<%= @score %>
-</div>
+<% if @picture.votes.exists?(user_id: current_user.id) %>
+	<div>
+		<button type="button" class="btn btn-default btn-lg" disabled>
+			<span class="glyphicon glyphicon-chevron-up"></span>
+			<%= link_to("Upvote", '#' , method: 'post') %>
+		</button>
+		<button type="button" class="btn btn-default btn-lg" disabled>
+			<span class="glyphicon glyphicon-chevron-down"></span>
+			<%= link_to("Downvote", '#' , method: 'post') %>
+		</button>
+			<%= @score %>
+	</div>
+<% else %>
+	<div>
+			<button type="button" class="btn btn-default btn-lg">
+				<span class="glyphicon glyphicon-chevron-up"></span>
+				<%= link_to("Upvote", upvote_picture_url , method: 'post') %>
+			</button>
+			<button type="button" class="btn btn-default btn-lg">
+				<span class="glyphicon glyphicon-chevron-down"></span>
+				<%= link_to("Downvote", downvote_picture_url , method: 'post') %>
+			</button>
+				<%= @score %>
+	</div>
+<% end %>
+
+

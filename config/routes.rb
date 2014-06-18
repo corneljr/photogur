@@ -4,7 +4,7 @@ Photogur::Application.routes.draw do
   get 'pictures/mypictures'
   resources :comments
   resources :pictures do 
-    member do
+     member do
       post 'downvote'
       post 'upvote'
     end
