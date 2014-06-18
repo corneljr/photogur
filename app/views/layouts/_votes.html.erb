@@ -1,5 +1,5 @@
 <% if @picture.votes.exists?(user_id: current_user.id) %>
-	<div>
+	<div class='vote'>
 		<button type="button" class="btn btn-default btn-lg" disabled>
 			<span class="glyphicon glyphicon-chevron-up"></span>
 			<%= link_to("Upvote", '#' , method: 'post') %>
@@ -11,7 +11,7 @@
 			<%= @score %>
 	</div>
 <% else %>
-	<div>
+	<div class='vote'>
 			<button type="button" class="btn btn-default btn-lg">
 				<span class="glyphicon glyphicon-chevron-up"></span>
 				<%= link_to("Upvote", upvote_picture_url , method: 'post') %>
