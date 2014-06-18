@@ -1,0 +1,24 @@
+<div class='panel panel-primary center'>
+	<div class='panel-heading'>
+		<h1>Add a picture</h1>
+	</div>
+	<div class='panel-body'>
+		<%= form_tag '/pictures' do %>
+			<div class='form-group'>
+				<%= label_tag 'artist' %>
+				<%= text_field_tag 'artist', nil, class: 'form-control' %>
+			</div>
+			<div class='form-group'>
+				<%= label_tag 'title' %>
+				<%= text_field_tag 'title', nil, class: 'form-control' %>
+			</div>
+			<div class='form-group'>
+				<%= label_tag 'url' %>
+				<%= text_field_tag 'url', nil, class: 'form-control' %>
+			</div>
+			<div>
+				<%= submit_tag 'Save', class: 'btn btn-primary' %>
+			</div>
+		<% end %>
+	</div>
+</div>

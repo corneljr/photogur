@@ -1,0 +1,53 @@
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700);
+
+$navbar-default-bg: #1abc9c;
+$navbar-default-link-color: #FFF;
+$btn-primary-bg: #1abc9c;
+$body-bg: #bdc3c7;
+$jumbotron-bg: white;
+$font-family-sans-serif: 'Noto Sans', sans-serif;
+$navbar-default-font-family: 'Noto Sans', sans-serif;
+$panel-primary-heading-bg: #1abc9c;
+
+@import "bootstrap";
+
+.center {
+	text-align: center;
+}
+
+.jumbotron {
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 10px;
+}
+
+.navbar-brand {
+	font-size: 30px;
+}
+
+.glyphicon .glyphicon-picture {
+	background-color: white;
+}
+
+.panel {
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	border: 0px;
+}
+
+.panel-heading {
+	border: 0px;
+}
+
+.panel-body {
+	margin-left: 100px;
+	margin-right: 100px;
+}
+
+.form-group {
+	text-align: left;
+}
+
+
