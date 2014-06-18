@@ -53,4 +53,23 @@ $panel-primary-heading-bg: #1abc9c;
 	text-align: left;
 }
 
+.form-control {
+	display: inline-block;
+	width: 80%;
+}
+
+.well {
+	background-color: #16a085;
+	color: white;
+	border: 0px;
+	padding: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: left;
+}
+
+button {
+	display: inline-block;
+	margin-left: auto;
+}
 

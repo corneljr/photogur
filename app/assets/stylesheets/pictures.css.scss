@@ -91,7 +91,13 @@ h3 {
 
 .show-title {
 	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 10px;
 	font-size: 30px;
+	background-color: #1abc9c;
+	border-radius: 5px;
+	color: white;
+	text-align: center;
 }
 
 .discription {
@@ -115,6 +121,12 @@ h3 {
 	display: inline-block;
 }
 
-.mypic {
+.submit-comment {
+	background-color: white;
+	display: inline-block;
+	color: #1abc9c;
+}
 
+.comment {
+	display: inline;
 }

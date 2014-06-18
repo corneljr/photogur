@@ -1,0 +1,31 @@
+<div class='panel-default show-container'>
+	<h2 class='panel-header show-title'><%= @picture.title %></h2>
+	<div class='panel-body show-body'>
+		<%= image_tag(@picture[:url], class: 'images-show') %>
+	</div>
+	<div class='panel panel-body show-footer discription'>
+		<%= form_for @comment do |c| %>
+
+			<%= c.text_field :text, class: 'form-control',:placeholder => "Submit a comment" %>
+
+			<%= c.hidden_field :picture_id, :value => @picture.id %>
+			<%= c.hidden_field :user_id, :value => current_user.id %>
+
+			<%= c.submit 'Save', class: 'btn btn-primary submit-comment' %>
+			<% end %>
+
+			<% @comments.each do |comment| %>
+			<div class='well'>
+				<p class='comment'><%= User.find(comment.user_id).email %>: </p>
+				<p class='comment'><%= comment.text %></p>
+				<% if current_user.id == comment.user_id %>
+				<button class = 'btn btn-primary'>Delete</button>
+				<% end %>
+			</div>
+			<% end %>
+	</div>
+</div>
+
+
+
+

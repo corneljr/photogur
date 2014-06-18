@@ -7,6 +7,13 @@ class PicturesController < ApplicationController
 
 	def show
 		@picture = Picture.find(params[:id])
+		@comments = @picture.comments.all
+		@comment = Comment.new
+
+		@score = 0
+		@picture.votes.each do |vote|
+			@score += vote.polarity
+		end
 	end
 
 	def new
@@ -40,6 +47,20 @@ class PicturesController < ApplicationController
 	def destroy
 		Picture.find(params[:id]).destroy
 		redirect_to pictures_url
+	end
+
+	def upvote
+		@picture = Picture.find(params[:id])
+		@vote = Vote.create(:polarity => 1, :user_id => current_user.id, :picture_id => @picture.id)
+		@vote.save
+		redirect_to "/pictures/#{@picture.id}"
+	end
+
+	def downvote
+		@picture = Picture.find(params[:id])
+		@vote = Vote.create(:polarity => -1, :user_id => current_user.id, :picture_id => @picture.id)
+		@vote.save
+		redirect_to "/pictures/#{@picture.id}"
 	end
 
 	private

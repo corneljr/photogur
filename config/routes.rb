@@ -2,7 +2,13 @@ Photogur::Application.routes.draw do
   devise_for :users
   root 'pages#home'
   get 'pictures/mypictures'
-  resources :pictures
+  resources :comments
+  resources :pictures do 
+    member do
+      post 'downvote'
+      post 'upvote'
+    end
+  end
 
 
 
