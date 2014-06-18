@@ -2,12 +2,15 @@
 
 <% if current_user.id == @picture.user_id %>
 <p class=><%= link_to "Delete", picture_path(@picture), method: :delete, class: 'btn btn-primary btn-delete' %></p>
-<% end %>
+<% end %>	
 
-<div class='panel panel-body show'>
-	<%= image_tag(@picture[:url], class: 'images') %>
-</div>
+<div class='panel-deafult show-container'>
+	<div class='panel-body show-body'>
+		<%= image_tag(@picture[:url], class: 'images-show') %>
+	</div>
 
-<div class='panel panel-body show'>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio voluptas cupiditate quibusdam magnam doloribus, nobis et mollitia minus aliquam vero fugiat atque temporibus a sit sed minima veniam itaque enim.</p>
+	<div class='panel panel-body show-footer discription'>
+		<h2 class='show-title'><%= @picture.title %></h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio voluptas cupiditate quibusdam magnam doloribus, nobis et mollitia minus aliquam vero fugiat atque temporibus a sit sed minima veniam itaque enim.</p>
+	</div>
 </div>

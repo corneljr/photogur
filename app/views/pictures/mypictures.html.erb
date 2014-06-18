@@ -1,0 +1,15 @@
+<div class='main'>
+	<% @pictures.each do |picture| %>
+		<div class='box panel panel-body'>
+			<div class='box-image'>
+			<a href="/pictures/<%= picture.id %>"/>
+				<%= image_tag(picture.url,class: 'images-index') %>
+			</a>
+			</div>
+			<div class='mypictures-footer panel-footer center mypicture-footer'>
+				<p class=><%= link_to "Edit", edit_picture_path(picture.id), class: 'btn btn-primary btn-edit' %></p>
+				<p class=><%= link_to "Delete", picture_path(@pictures), method: :delete, class: 'btn btn-primary btn-delete' %></p>
+			</div>
+		</div>
+	<% end %>
+</div>

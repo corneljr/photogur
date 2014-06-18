@@ -1,5 +1,4 @@
 class PicturesController < ApplicationController
-	before_action :correct_user, only: [:edit, :update, :detroy]
 	before_action :authenticate_user!, except: [:index, :show]
 
 	def index
@@ -14,6 +13,10 @@ class PicturesController < ApplicationController
 		@picture = current_user.pictures.new
 	end
 
+	def edit
+		@picture = Picture.find(params[:id])
+	end
+
 	def create
 		@picture = Picture.new(picture_params)
 		@picture.user_id = current_user.id
@@ -23,6 +26,15 @@ class PicturesController < ApplicationController
 		else
 			render :new
 		end
+	end
+
+	def update
+		Picture.find(params[:id]).update_attributes(picture_params)
+		redirect_to pictures_mypictures_url
+	end
+
+	def mypictures
+		@pictures = current_user.pictures
 	end
 
 	def destroy
